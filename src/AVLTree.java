@@ -51,23 +51,57 @@ public class AVLTree {
         int balance = getBalance(node);
         System.out.println("\tBalance del nodo " + " = " + balance);
         
+        // Rotación Izquierda-Izquierda (LL)
         if (balance > 1 && value < node.getLeft().getKey()) {
-            // Rotación Izquierda - Izquierda
-            System.out.println("Rotacion Derecha");
+            System.out.println("Rotacion Derecha (LL)");
+            return rotateRight(node);
         }
-        if(balance < -1 && value > node.getRight().getKey()){
-            //Rotacion Derecha - Derecha
-            System.out.println("Rotacion Izquierda");
+
+        // Rotación Derecha-Derecha (RR)
+        if (balance < -1 && value > node.getRight().getKey()) {
+            System.out.println("Rotacion Izquierda (RR)");
+            return rotateLeft(node);
         }
-        if(balance > 1 && value > node.getLeft().getKey()){
-            //Rotacion Izquierda Derecha
-            System.out.println("Rotacion Izquierda Derecha");
+
+        // Rotación Izquierda-Derecha (LR)
+        if (balance > 1 && value > node.getLeft().getKey()) {
+            System.out.println("Rotacion Izquierda-Derecha (LR)");
+            node.setLeft(rotateLeft(node.getLeft()));
+            return rotateRight(node);
         }
-        if(balance < -1 && value < node.getRight().getKey()){
-            //Rotacion Derecha Izquierda
-            System.out.println("Rotacion Derecha Izquierda");
+
+        // Rotación Derecha-Izquierda (RL)
+        if (balance < -1 && value < node.getRight().getKey()) {
+            System.out.println("Rotacion Derecha-Izquierda (RL)");
+            node.setRight(rotateRight(node.getRight()));
+            return rotateLeft(node);
         }
         return node;
     }
+
+    private Node rotateRight(Node y) {
+        Node x = y.getLeft();
+        Node T2 = x.getRight();
+
+        x.setRight(y);
+        y.setLeft(T2);
+        y.setHeight(Math.max(height(y.getLeft()), height(y.getRight())) + 1);
+        x.setHeight(Math.max(height(x.getLeft()), height(x.getRight())) + 1);
+
+        return x;
+    }
+
+    private Node rotateLeft(Node x) {
+        Node y = x.getRight();
+        Node T2 = y.getLeft();
+
+        y.setLeft(x);
+        x.setRight(T2);
+        x.setHeight(Math.max(height(x.getLeft()), height(x.getRight())) + 1);
+        y.setHeight(Math.max(height(y.getLeft()), height(y.getRight())) + 1);
+
+        return y;
+    }
+
     
 }
