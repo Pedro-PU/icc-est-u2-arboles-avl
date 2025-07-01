@@ -47,26 +47,30 @@ Para ejecutar el proyecto:
 
 ## 🧑‍💻 Ejemplo de Entrada
 
----
-Pedro Pesantez
-Fernando Martinez
-Node a Insertar
-Nodo insertado: 10 balance al insertar = 0
-Node a Insertar
-Nodo insertado: 20 balance al insertar = 0
-Node actual: 10
-        Altura del nodo  = 2
-        Balance del nodo  = -1
-Node a Insertar
-Nodo insertado: 15 balance al insertar = 0
-Node actual: 20
-        Altura del nodo  = 2
-        Balance del nodo  = 1
-Node actual: 10
-        Altura del nodo  = 3
-        Balance del nodo  = -2
-Rotacion Derecha-Izquierda (RL)
+```bash
+Pedro Pesantez  
+Fernando Martinez  
+Node a Insertar  
+Nodo insertado: 10 balance al insertar = 0  
+Node a Insertar  
+Nodo insertado: 20 balance al insertar = 0  
+Node actual: 10  
+        Altura del nodo  = 2  
+        Balance del nodo  = -1  
+Node a Insertar  
+Nodo insertado: 15 balance al insertar = 0  
+Node actual: 20  
+        Altura del nodo  = 2  
+        Balance del nodo  = 1  
+Node actual: 10  
+        Altura del nodo  = 3  
+        Balance del nodo  = -2  
+Rotacion Derecha-Izquierda (RL)  
 AVLTree@87aac27
+```
+
+---
 
 ![Image](https://github.com/user-attachments/assets/a13b0651-0441-40eb-920b-edd8461d89cd)
 ![image](https://github.com/user-attachments/assets/f11b6e52-1470-4872-8454-624d779d8424)
+
